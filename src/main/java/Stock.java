@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Stock
 {
-    static Voiture[][] stock = new Voiture[2][2];  // static à la place de public
+    static voiture[][] stock = new Voiture[2][2];  // static à la place de public
     private String name;
 
     public static ArrayList<Voiture> getMostExpensive (double s, double m)//noms des voitures cheres
