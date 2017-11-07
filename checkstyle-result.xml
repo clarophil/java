@@ -1,0 +1,3 @@
+<module name="MethodLength">
+    <property name="max" value="60"/>
+</module>
