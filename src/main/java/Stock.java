@@ -65,6 +65,5 @@ public class Stock
         double moyenne = Moyenne();
         double ec = Ecarttype(moyenne);
         System.out.println(getMostExpensive(ec,moyenne));
-
     }
 }
