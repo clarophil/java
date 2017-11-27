@@ -13,7 +13,9 @@ public class Stock
             for (int j = 0; j < stock[i].length; j++)
             {
                 if ((stock[i][j].getPrice()) > (2 * s + m))
-                x.add(stock[i][j].getModele()); //on ajoute la voiture V placée à la position [i][j] dans l'ArrayList
+                {
+                    x.add(stock[i][j].getModele()); //on ajoute la voiture V placée à la position [i][j] dans l'ArrayList
+                }
             }
         }
         return x;
