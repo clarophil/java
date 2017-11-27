@@ -8,11 +8,11 @@ public class Stock
 
     {
         ArrayList x = new ArrayList();
-        for (int i = 0; i< stock.length; i++)
+        for (int i = 0; i < stock.length; i++)
         {
-            for (int j = 0; j<stock[i].length; j++)
+            for (int j = 0; j < stock[i].length; j++)
             {
-                if ((stock[i][j].getPrice()) > (2*s+m))
+                if ((stock[i][j].getPrice()) > (2 * s + m))
                 x.add(stock[i][j].getModele()); //on ajoute la voiture V placée à la position [i][j] dans l'ArrayList
             }
         }
@@ -22,15 +22,15 @@ public class Stock
     public static double moyenne()
     {
         double m = 0;
-        int i,j =0;  // declaration hors boucle
-        for ( i = 0; i< stock.length; i++)
+        int i,j = 0;  // declaration hors boucle
+        for ( i = 0; i < stock.length; i++)
         {
-            for (j = 0; j<stock[i].length; j++)
+            for (j = 0; j < stock[i].length; j++)
             {
                 m =+ stock[i][j].getPrice(); // Appel de méthode : mettre des parenthèses derrière
             }
         }
-        m = m/(i*j);
+        m = m / (i * j);
        return m; // moyenne = prix de toutes les voitures / par (i*j qui est le nombre de voitures)
     }
 
@@ -38,9 +38,9 @@ public class Stock
     {
         double s = 0;
         double diff, a;
-        for (int i = 0; i< stock.length; i++)
+        for (int i = 0; i < stock.length; i++)
         {
-            for (int j = 0; j<stock[0].length; j++)
+            for (int j = 0; j < stock[0].length; j++)
             {
                 a = stock[i][j].getPrice() - m;
                 diff = Math.pow(a,2);
@@ -58,10 +58,10 @@ public class Stock
         Voiture v3 = new Voiture(10000, "C1");
         Voiture v4 = new Voiture(20000, "Espace");
 
-        stock[0][0]= v1;
-        stock[0][1]= v2;
-        stock[1][0]= v3;
-        stock[1][1]= v4;  // tout le tableau remplit sinon plantage dans les boucles
+        stock[0][0] = v1;
+        stock[0][1] = v2;
+        stock[1][0] = v3;
+        stock[1][1] = v4;  // tout le tableau remplit sinon plantage dans les boucles
 
         double moyenne = moyenne();
         double ec = ecarttype(moyenne);
