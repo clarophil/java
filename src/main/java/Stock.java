@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class Stock
 {
     static Voiture[][] stock = new Voiture[2][2];  // static à la place de public
-    private String NAME;
+    private String name;
 
     public static ArrayList<Voiture> getMostExpensive (double s, double m)//noms des voitures cheres
 
@@ -19,7 +19,7 @@ public class Stock
         return x;
     }
 
-    public static double Moyenne ()
+    public static double moyenne ()
     {
         double m = 0;
         int i,j =0;  // declaration hors boucle
@@ -34,7 +34,7 @@ public class Stock
        return m; // moyenne = prix de toutes les voitures / par (i*j qui est le nombre de voitures)
     }
 
-    public static double Ecarttype (double m)
+    public static double ecarttype (double m)
     {
         double s = 0;
         double diff, a;
@@ -57,14 +57,14 @@ public class Stock
         Voiture v2 = new Voiture (4000, "Golf");
         Voiture v3 = new Voiture (10000, "C1");
         Voiture v4 = new Voiture (20000, "Espace");
-        
+
         stock[0][0]= v1;
         stock[0][1]= v2;
         stock[1][0]= v3;
         stock[1][1]= v4;  // tout le tableau remplit sinon plantage dans les boucles
-        
-        double moyenne = Moyenne();
-        double ec = Ecarttype(moyenne);
+
+        double moyenne = moyenne();
+        double ec = ecarttype(moyenne);
         System.out.println(getMostExpensive(ec,moyenne));
     }
 }
