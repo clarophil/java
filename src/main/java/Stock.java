@@ -4,7 +4,7 @@ public class Stock
     static Voiture[][] stock = new Voiture[2][2];  // static à la place de public
     private String name;
 
-    public static ArrayList<Voiture> getMostExpensive (double s, double m)//noms des voitures cheres
+    public static ArrayList<Voiture> getMostExpensive(double s, double m)//noms des voitures cheres
 
     {
         ArrayList x = new ArrayList();
@@ -19,7 +19,7 @@ public class Stock
         return x;
     }
 
-    public static double moyenne ()
+    public static double moyenne()
     {
         double m = 0;
         int i,j =0;  // declaration hors boucle
@@ -34,7 +34,7 @@ public class Stock
        return m; // moyenne = prix de toutes les voitures / par (i*j qui est le nombre de voitures)
     }
 
-    public static double ecarttype (double m)
+    public static double ecarttype(double m)
     {
         double s = 0;
         double diff, a;
@@ -51,12 +51,12 @@ public class Stock
         return s;
     }
 
-    public static void main (String[] args)
+    public static void main(String[] args)
     {
-        Voiture v1 = new Voiture (1000,"Polo");
-        Voiture v2 = new Voiture (4000, "Golf");
-        Voiture v3 = new Voiture (10000, "C1");
-        Voiture v4 = new Voiture (20000, "Espace");
+        Voiture v1 = new Voiture(1000,"Polo");
+        Voiture v2 = new Voiture(4000, "Golf");
+        Voiture v3 = new Voiture(10000, "C1");
+        Voiture v4 = new Voiture(20000, "Espace");
 
         stock[0][0]= v1;
         stock[0][1]= v2;
