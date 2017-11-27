@@ -23,11 +23,11 @@ public class Stock
     {
         double m = 0;
         int i,j = 0;  // declaration hors boucle
-        for ( i = 0; i < stock.length; i++)
+        for (i = 0; i < stock.length; i++)
         {
             for (j = 0; j < stock[i].length; j++)
             {
-                m =+ stock[i][j].getPrice(); // Appel de méthode : mettre des parenthèses derrière
+                m = m + stock[i][j].getPrice(); // Appel de méthode : mettre des parenthèses derrière
             }
         }
         m = m / (i * j);
