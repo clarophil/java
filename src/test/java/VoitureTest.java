@@ -1,5 +1,6 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
+import app.Voiture;
 
 public class VoitureTest {
     Voiture auto = new Voiture(12000,"Ford");
