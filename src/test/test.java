@@ -1,29 +1,15 @@
-public class test
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test
+
+public class SampleTest
 {
-    public boolean concateneTest() {
+    @Test
+    public void simpleTest() {
+        int a = 1;
+        int b = 2;
+        assertTrue(a + b == 3);
 
-        MyString classATester = new MyString();
-
-        String a = "salut les ";
-
-        String b = "zeros";
-
-        String resultatAttendu = "salut les zeros";
-
-        String resultatObtenu = classATester.concatene(a, b);
-
-        if (resultatAttendu.compareTo(resultatObtenu) == 0) {
-
-            return true;
-
-        }
-
-        else {
-
-            return false;
-
-        }
 }
 
-
-        }
+}
