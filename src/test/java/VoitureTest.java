@@ -1,9 +1,18 @@
-import org.junit.Test;
+
 import static org.junit.Assert.*;
+import org.junit.Test;
+import org.junit.BeforeClass;
 import app.Voiture;
 
 public class VoitureTest {
-    Voiture auto = new Voiture(12000,"Ford");
+
+    private static  Voiture auto;
+
+    @BeforeClass
+    public  static void setupBeforeClass()
+    {
+        auto = new Voiture(12000,"Ford");
+    }
 
     @Test
     public void getPrice() {
