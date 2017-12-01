@@ -1,9 +1,10 @@
+import org.junit.Test;
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-
-public class SampleTest
-{
+/**
+ * Created by dkp on 01-12-2017.
+ */
+public class SampleTest {
     @Test
     public void simpleTest() {
         int a = 1;
