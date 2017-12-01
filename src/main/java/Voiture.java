@@ -1,4 +1,5 @@
 public class Voiture
+
 {
     private double price;
     private String modele;

@@ -9,13 +9,10 @@ public class Stock
 
     {
         ArrayList x = new ArrayList();
-        for (int i = 0; i < stock.length; i++)
-        {
-            for (int j = 0; j < stock[i].length; j++)
-            {
-                if ((stock[i][j].getPrice()) > (2 * s + m))
-                {
-                    x.add(stock[i][j].getModele()); //on ajoute la voiture V placée à la position [i][j] dans l'ArrayList
+        for (Voiture[] aStock : stock) {
+            for (int j = 0; j < aStock.length; j++) {
+                if ((aStock[j].getPrice()) > (2 * s + m)) {
+                    x.add(aStock[j].getModele()); //on ajoute la voiture V placée à la position [i][j] dans l'ArrayList
                 }
             }
         }
@@ -41,12 +38,10 @@ public class Stock
     {
         double s = 0;
         double diff, a;
-        for (int i = 0; i < stock.length; i++)
-        {
-            for (int j = 0; j < stock[0].length; j++)
-            {
-                a = stock[i][j].getPrice() - m;
-                diff = Math.pow(a,2);
+        for (Voiture[] aStock : stock) {
+            for (int j = 0; j < stock[0].length; j++) {
+                a = aStock[j].getPrice() - m;
+                diff = Math.pow(a, 2);
                 //s = 1%(i+j-1)*diff;  // division par zéro
                 s = Math.sqrt(s);
             }
