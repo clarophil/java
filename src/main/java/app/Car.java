@@ -10,7 +10,7 @@ public class Car {
    * @param price double price
    * @param brand string brand
    */
-  protected Car(double price, String brand) {
+  public Car(double price, String brand) {
     this.brand = brand;
     this.price = price;
   }
