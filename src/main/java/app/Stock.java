@@ -2,69 +2,85 @@ package app;
 
 import java.util.ArrayList;
 
-public class Stock
-{
-  static Voiture[][] stock = new Voiture[2][2];  // static à la place de public
-  private String name;
+public class Stock {
+  private static Car[][] stock = new Car[2][2];
 
-    public static ArrayList<Voiture> getMostExpensive(double s, double m)//noms des voitures cheres
-
-    {
-        ArrayList x = new ArrayList();
-        for (Voiture[] aStock : stock) {
-            for (int j = 0; j < aStock.length; j++) {
-                if ((aStock[j].getPrice()) > (2 * s + m)) {
-                    x.add(aStock[j].getModele()); //on ajoute la voiture V placée à la position [i][j] dans l'ArrayList
-                }
-            }
+  /**
+   * Find the most expensive cars.
+   *
+   * @param ec standard diviation
+   * @param average average
+   * @return array of expensive cars
+   */
+  private static ArrayList<Car> getMostExpensive(double ec, double average) {
+    ArrayList x = new ArrayList();
+    for (Car[] car : stock) {
+      for (int j = 0; j < car.length; j++) {
+        if ((car[j].getPrice()) > (2 * ec + average)) {
+          x.add(car[j].getBrand());
         }
-        return x;
+      }
     }
+    return x;
+  }
 
-    public static double moyenne()
-    {
-        double m = 0;
-        int i,j = 0;  // declaration hors boucle
-        for (i = 0; i < stock.length; i++)
-        {
-            for (j = 0; j < stock[i].length; j++)
-            {
-                m = m + stock[i][j].getPrice(); // Appel de méthode : mettre des parenthèses derrière
-            }
-        }
-        m = m / (i * j);
-       return m; // moyenne = prix de toutes les voitures / par (i*j qui est le nombre de voitures)
+  /**
+   * Process average of cost cars.
+   *
+   * @return double average
+   */
+  public static double average() {
+    double avg = 0;
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < stock.length; i++) {
+      for (j = 0; j < stock[i].length; j++) {
+        avg = avg + stock[i][j].getPrice();
+      }
     }
+    avg = avg / (i * j);
+    return avg;
+  }
 
-    public static double ecarttype(double m)
-    {
-        double s = 0;
-        double diff, a;
-        for (Voiture[] aStock : stock) {
-            for (int j = 0; j < stock[0].length; j++) {
-                a = aStock[j].getPrice() - m;
-                diff = Math.pow(a, 2);
-                //s = 1%(i+j-1)*diff;  // division par zéro
-                s = Math.sqrt(s);
-            }
-        }
-        return s;
+  /**
+   * Process the standard deviation of cars.
+   *
+   * @param average average of cost cars
+   * @return double deviation
+   */
+  public static double deviation(double average) {
+    double dev = 0;
+    double diff;
+    double a;
+    for (Car[] car : stock) {
+      for (int j = 0; j < stock[0].length; j++) {
+        a = car[j].getPrice() - average;
+        diff = Math.pow(a, 2);
+        dev = Math.sqrt(dev);
+      }
     }
+    return dev;
+  }
 
-    public static void main(String[] args)
-    {
-        Voiture v1 = new Voiture(1000,"Polo");
-        Voiture v2 = new Voiture(4000, "Golf");
-        Voiture v3 = new Voiture(10000, "C1");
-        Voiture v4 = new Voiture(20000, "Espace");
+  /**
+   * Main.
+   *
+   * @param args argurments
+   */
+  public static void main(String[] args) {
+    Car v1 = new Car(1000, "Polo");
+    Car v2 = new Car(4000, "Golf");
+    Car v3 = new Car(10000, "C1");
+    Car v4 = new Car(20000, "Espace");
 
-        stock[0][0] = v1;
-        stock[0][1] = v2;
-        stock[1][0] = v3;
-        stock[1][1] = v4;  // tout le tableau remplit sinon plantage dans les boucles
+    stock[0][0] = v1;
+    stock[0][1] = v2;
+    stock[1][0] = v3;
+    stock[1][1] = v4;
 
-        double moyenne = moyenne();
-        double ec = ecarttype(moyenne);
-        System.out.println(getMostExpensive(ec,moyenne));
-    }
+    double moyenne = average();
+    double ec = deviation(moyenne);
+    System.out.println(getMostExpensive(ec, moyenne));
+  }
 }

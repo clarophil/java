@@ -1,12 +1,11 @@
-
-import static org.junit.Assert.*;
 import org.junit.Test;
+import static org.junit.Assert.*;
 import org.junit.BeforeClass;
-import app.Voiture;
+import app.Car;
 
-public class VoitureTest {
+public class CarTest {
 
-    private static  Voiture auto;
+    private static  Car auto;
 
     @BeforeClass
     public  static void setupBeforeClass()
@@ -20,8 +19,8 @@ public class VoitureTest {
     }
 
     @Test
-    public void getModele() {
-        assertTrue(auto.getModele() == "Ford");
+    public void getModel() {
+        assertTrue(auto.getModel() == "Ford");
     }
 
 }
