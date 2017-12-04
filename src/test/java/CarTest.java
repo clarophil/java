@@ -10,7 +10,7 @@ public class CarTest {
     @BeforeClass
     public  static void setupBeforeClass()
     {
-        auto = new Voiture(12000,"Ford");
+        auto = new Car(12000,"Ford");
     }
 
     @Test
@@ -19,8 +19,8 @@ public class CarTest {
     }
 
     @Test
-    public void getModel() {
-        assertTrue(auto.getModel() == "Ford");
+    public void getBrand() {
+        assertTrue(auto.getBrand() == "Ford");
     }
 
 }
