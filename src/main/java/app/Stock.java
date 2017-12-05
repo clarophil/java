@@ -3,7 +3,7 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-class Stock
+final class Stock
 {
   private static List<Car> listCar = new ArrayList();
 
