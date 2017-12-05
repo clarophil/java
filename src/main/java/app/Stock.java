@@ -8,6 +8,13 @@ class Stock
   private static List<Car> stock = new ArrayList<Car>();
 
   /**
+   * Constructor.
+   *
+   */
+  private Stock()
+  { //not called }
+
+  /**
    * Find the most expensive cars.
    *
    * @param ec      standard diviation

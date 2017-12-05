@@ -1,6 +1,7 @@
 package app;
 
-public class Car {
+public class Car
+{
   private double price;
   private String brand;
 
@@ -10,7 +11,8 @@ public class Car {
    * @param price double price
    * @param brand string brand
    */
-  public Car(double price, String brand) {
+  public Car(double price, String brand)
+  {
     this.brand = brand;
     this.price = price;
   }
@@ -20,7 +22,8 @@ public class Car {
    *
    * @return  double price
    */
-  public double getPrice() {
+  public double getPrice()
+  {
     return price;
   }
 
@@ -29,7 +32,8 @@ public class Car {
    *
    * @return string brand
    */
-  public String getBrand() {
+  public String getBrand()
+  {
     return brand;
   }
 }
