@@ -1,13 +1,11 @@
 package app;
 
-import app.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class Stock {
-  public static List<Car> stck = new ArrayList<Car>();
+class Stock
+{
+  private static List<Car> stock = new ArrayList<Car>();
 
   /**
    * Find the most expensive cars.
@@ -16,12 +14,15 @@ public class Stock {
    * @param average average
    * @return array of expensive cars
    */
-  public static ArrayList<Car> getMostExpensive(double ec, double average) {
+  private static ArrayList<Car> getMostExpensive(double ec, double average)
+  {
     ArrayList x = new ArrayList();
-    for ( Car car : stck) {
-        if ((car.getPrice()) > ( ec + average)) {
+    for (Car car : stock)
+    {
+        if ((car.getPrice()) > (ec + average))
+        {
           x.add(car.getBrand());
-      }
+        }
     }
     return x;
   }
@@ -31,15 +32,15 @@ public class Stock {
    *
    * @return double average
    */
-  public static double average() {
+  private static double average()
+  {
     double avg = 0;
-    int i = 0;
-    int j = 0;
 
-    for (Car car : stck) {
+    for (Car car : stock)
+    {
         avg = avg + car.getPrice();
     }
-    avg = avg / stck.size() ;
+    avg = avg / stock.size();
     return avg;
   }
 
@@ -50,15 +51,17 @@ public class Stock {
    * @param average average of cost cars
    * @return double deviation
    */
-  public static double deviation(double average) {
+  private static double deviation(double average)
+  {
     double dev = 0;
     double diff;
     double sum = 0;
-    for (Car car : stck) {
+    for (Car car : stock)
+    {
         diff = car.getPrice() - average;
-        sum =+ Math.pow(diff, 2);
+        sum = sum + Math.pow(diff, 2);
     }
-    dev = Math.sqrt(sum / stck.size());
+    dev = Math.sqrt(sum / stock.size());
     return dev;
   }
 
@@ -67,16 +70,17 @@ public class Stock {
    *
    * @param args argurments
    */
-  public static void main(String[] args) {
+  public static void main(String[] args)
+  {
     Car v1 = new Car(1000, "Polo");
     Car v2 = new Car(4000, "Golf");
     Car v3 = new Car(10000, "C1");
     Car v4 = new Car(20000, "Espace");
 
-    stck.add(v1);
-    stck.add(v2);
-    stck.add(v3);
-    stck.add(v4);
+    stock.add(v1);
+    stock.add(v2);
+    stock.add(v3);
+    stock.add(v4);
 
     double avg = average();
     double ec = deviation(avg);
