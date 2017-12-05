@@ -1,24 +1,26 @@
 package app;
 
+import app.Car;
+
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Stock {
-  private static Car[][] stock = new Car[2][2];
+  public static List<Car> stck = new ArrayList<Car>();
 
   /**
    * Find the most expensive cars.
    *
-   * @param ec standard diviation
+   * @param ec      standard diviation
    * @param average average
    * @return array of expensive cars
    */
-  private static ArrayList<Car> getMostExpensive(double ec, double average) {
+  public static ArrayList<Car> getMostExpensive(double ec, double average) {
     ArrayList x = new ArrayList();
-    for (Car[] car : stock) {
-      for (int j = 0; j < car.length; j++) {
-        if ((car[j].getPrice()) > (2 * ec + average)) {
-          x.add(car[j].getBrand());
-        }
+    for ( Car car : stck) {
+        if ((car.getPrice()) > ( ec + average)) {
+          x.add(car.getBrand());
       }
     }
     return x;
@@ -34,14 +36,13 @@ public class Stock {
     int i = 0;
     int j = 0;
 
-    for (i = 0; i < stock.length; i++) {
-      for (j = 0; j < stock[i].length; j++) {
-        avg = avg + stock[i][j].getPrice();
-      }
+    for (Car car : stck) {
+        avg = avg + car.getPrice();
     }
-    avg = avg / (i * j);
+    avg = avg / stck.size() ;
     return avg;
   }
+
 
   /**
    * Process the standard deviation of cars.
@@ -52,14 +53,12 @@ public class Stock {
   public static double deviation(double average) {
     double dev = 0;
     double diff;
-    double a;
-    for (Car[] car : stock) {
-      for (int j = 0; j < stock[0].length; j++) {
-        a = car[j].getPrice() - average;
-        diff = Math.pow(a, 2);
-        dev = Math.sqrt(dev);
-      }
+    double sum = 0;
+    for (Car car : stck) {
+        diff = car.getPrice() - average;
+        sum =+ Math.pow(diff, 2);
     }
+    dev = Math.sqrt(sum / stck.size());
     return dev;
   }
 
@@ -74,13 +73,13 @@ public class Stock {
     Car v3 = new Car(10000, "C1");
     Car v4 = new Car(20000, "Espace");
 
-    stock[0][0] = v1;
-    stock[0][1] = v2;
-    stock[1][0] = v3;
-    stock[1][1] = v4;
+    stck.add(v1);
+    stck.add(v2);
+    stck.add(v3);
+    stck.add(v4);
 
-    double moyenne = average();
-    double ec = deviation(moyenne);
-    System.out.println(getMostExpensive(ec, moyenne));
+    double avg = average();
+    double ec = deviation(avg);
+    System.out.println(getMostExpensive(ec, avg));
   }
 }
