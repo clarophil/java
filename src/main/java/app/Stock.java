@@ -5,7 +5,7 @@ import java.util.List;
 
 class Stock
 {
-  private static List<Car> listCar = new ArrayList<>();
+  private static List<Car> listCar = new ArrayList();
 
   /**
    * Constructor.
