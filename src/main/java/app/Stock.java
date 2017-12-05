@@ -5,14 +5,16 @@ import java.util.List;
 
 class Stock
 {
-  private static List<Car> stock = new ArrayList<Car>();
+  private static List<Car> listCar = new ArrayList<>();
 
   /**
    * Constructor.
    *
    */
   private Stock()
-  { //not called }
+  {
+    //not called
+  }
 
   /**
    * Find the most expensive cars.
@@ -21,17 +23,17 @@ class Stock
    * @param average average
    * @return array of expensive cars
    */
-  private static ArrayList<Car> getMostExpensive(double ec, double average)
+  private static ArrayList<String> getMostExpensive(double ec, double average)
   {
-    ArrayList x = new ArrayList();
-    for (Car car : stock)
+    ArrayList<String> list = new ArrayList();
+    for (Car car : listCar)
     {
         if ((car.getPrice()) > (ec + average))
         {
-          x.add(car.getBrand());
+          list.add(car.getBrand());
         }
     }
-    return x;
+    return list;
   }
 
   /**
@@ -43,11 +45,11 @@ class Stock
   {
     double avg = 0;
 
-    for (Car car : stock)
+    for (Car car : listCar)
     {
         avg = avg + car.getPrice();
     }
-    avg = avg / stock.size();
+    avg = avg / listCar.size();
     return avg;
   }
 
@@ -60,15 +62,15 @@ class Stock
    */
   private static double deviation(double average)
   {
-    double dev = 0;
+    double dev;
     double diff;
     double sum = 0;
-    for (Car car : stock)
+    for (Car car : listCar)
     {
         diff = car.getPrice() - average;
         sum = sum + Math.pow(diff, 2);
     }
-    dev = Math.sqrt(sum / stock.size());
+    dev = Math.sqrt(sum / listCar.size());
     return dev;
   }
 
@@ -84,10 +86,10 @@ class Stock
     Car v3 = new Car(10000, "C1");
     Car v4 = new Car(20000, "Espace");
 
-    stock.add(v1);
-    stock.add(v2);
-    stock.add(v3);
-    stock.add(v4);
+    listCar.add(v1);
+    listCar.add(v2);
+    listCar.add(v3);
+    listCar.add(v4);
 
     double avg = average();
     double ec = deviation(avg);
