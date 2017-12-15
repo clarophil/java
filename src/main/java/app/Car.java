@@ -17,6 +17,7 @@ public class Car
     this.price = price;
   }
 
+
   /**
    * Getter to price.
    *
