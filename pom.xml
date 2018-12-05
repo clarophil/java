@@ -33,6 +33,11 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <reporting>
       <plugins>
          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.3-SNAPSHOT</version>
+         </plugin>
+         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
             <reportSets>
