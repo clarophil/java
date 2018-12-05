@@ -21,18 +21,7 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
                      <useSystemClassLoader>false</useSystemClassLoader>
             </configuration>
          </plugin>
-      </plugins>
-   </build>
-   <dependencies>
-      <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.8.2</version>
-      </dependency>
-   </dependencies>
-   <reporting>
-      <plugins>
-         <plugin>
+                  <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.3-SNAPSHOT</version>
@@ -75,6 +64,17 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
            </executions>
            
          </plugin>
+      </plugins>
+   </build>
+   <dependencies>
+      <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+      </dependency>
+   </dependencies>
+   <reporting>
+      <plugins>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
