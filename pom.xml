@@ -33,18 +33,6 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
                  <goal>prepare-agent</goal>
                </goals>
              </execution>
-             <execution>
-               <id>default-report</id>
-               <goals>
-                 <goal>report</goal>
-               </goals>
-             </execution>
-             <execution>
-               <id>default-check</id>
-               <goals>
-                 <goal>check</goal>
-               </goals>
-             </execution>
            </executions>
            
          </plugin>
