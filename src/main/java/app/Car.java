@@ -37,8 +37,7 @@ public class Car
   {
     return brand;
   }
-}
-class test {
+
   // Cyclomatic Complexity = 12
   public void doSmth()  {         // 1
     if (a == b)  {                // 2
