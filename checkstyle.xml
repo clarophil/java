@@ -48,10 +48,6 @@
 
 -->
  
-<module name="CyclomaticComplexity">
-  <property name="max" value="10"/>
-</module>
-
 <module name="Checker">
 
     <!-- Locale to use to generate messages -->
@@ -194,6 +190,9 @@
         <module name="TodoComment"/>
         <module name="UpperEll"/>
 
+     <module name="CyclomaticComplexity">
+       <property name="max" value="15"/>
+     </module>
     </module>
 
 </module>
