@@ -15,7 +15,7 @@ public class CarTest {
 
     @Test
     public void getPrice() {
-        assertTrue(auto.getPrice() ==  1200);
+        assertTrue(auto.getPrice() ==  12000);
     }
 
     @Test
