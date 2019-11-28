@@ -18,7 +18,6 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
         </plugin>
-        ...
       </plugins>
     </pluginManagement>
       <plugins>
@@ -29,6 +28,9 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <version>3.8.1</version>
             <configuration>
                      <useSystemClassLoader>false</useSystemClassLoader>
+                    <configuration>
+                     <source>7</source>
+                     <target>7</target>
             </configuration>
          </plugin>
          <plugin>
