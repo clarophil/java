@@ -28,7 +28,6 @@ xsi:schemaLocation="http://ma... http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <version>3.8.1</version>
             <configuration>
                      <useSystemClassLoader>false</useSystemClassLoader>
-                    <configuration>
                      <source>1.7</source>
                      <target>1.7</target>
             </configuration>
